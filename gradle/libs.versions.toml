@@ -1,0 +1,25 @@
+[versions]
+modularity-module = "1.8.15"
+openjfx-javafx = "0.0.13"
+jlink = "3.1.1"
+javafx = "21.0.6"
+postgresql = "42.7.5"
+jbcrypt = "0.4"
+hibernate-core = "6.6.13.Final"
+ikonli = "12.4.0"
+material-icon = "12.4.0"
+
+[libraries]
+javafx-controls = { module = "org.openjfx:javafx-controls", version.ref = "javafx"}
+javafx-fxml = { module = "org.openjfx:javafx-fxml", version.ref = "javafx"}
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+jbcrypt = { module = "org.mindrot:jbcrypt", version.ref = "jbcrypt" }
+hibernate-core = { module = "org.hibernate.orm:hibernate-core", version.ref = "hibernate-core" }
+ikonli = { module = "org.kordamp.ikonli:ikonli-javafx", version.ref = "ikonli" }
+material-icon = { module = "org.kordamp.ikonli:ikonli-materialdesign-pack", version.ref = "material-icon" }
+jackson = { module = "com.fasterxml.jackson.core:jackson-databind", version = "2.19.0" }
+
+[plugins]
+modularity-module = { id = "org.javamodularity.moduleplugin", version.ref = "modularity-module" }
+openjfx-javafx = { id = "org.openjfx.javafxplugin", version.ref = "openjfx-javafx" }
+beryx-jlink = { id = "org.beryx.jlink", version.ref = "jlink" }

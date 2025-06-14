@@ -1,0 +1,1 @@
+rootProject.name = "siji-usu-desktop-java"
