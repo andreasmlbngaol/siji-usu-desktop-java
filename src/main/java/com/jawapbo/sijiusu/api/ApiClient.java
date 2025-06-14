@@ -9,6 +9,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@SuppressWarnings("unused")
 public class ApiClient {
     private static final HttpClient client = HttpClient.newHttpClient();
     private static final String BASE_URL = "https://api.andreasmlbngaol.site/api";
@@ -85,5 +86,4 @@ public class ApiClient {
             return false;
         }
     }
-
 }

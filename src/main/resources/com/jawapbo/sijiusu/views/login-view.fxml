@@ -1,89 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <HBox layoutX="198.0" layoutY="74.0" prefHeight="573.0" prefWidth="884.0" style="-fx-background-color: #FFFFFF;">
-      <children>
-         <VBox prefHeight="554.0" prefWidth="462.0" style="-fx-background-color: #FFFFFF;">
-            <children>
-               <VBox alignment="CENTER" prefHeight="61.0" prefWidth="442.0">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.LoginController">
+   <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;">
+      <HBox alignment="CENTER" prefHeight="480.0" prefWidth="800.0" style="-fx-border-radius: 20;">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0" />
+         </effect>
+         <VBox alignment="CENTER_LEFT" prefWidth="400.0" spacing="32.0" style="-fx-background-color: #FFFFFF;">
+            <padding>
+               <Insets left="50.0" right="50.0" />
+            </padding>
+            <VBox alignment="CENTER" prefHeight="61.0" prefWidth="442.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <Label text="Selamat Datang" textFill="#493628">
+                  <font>
+                     <Font name="Segoe UI Bold" size="30.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Silahkan masuk ke akun Anda" textAlignment="CENTER" textFill="#ab886d" wrapText="true">
                   <VBox.margin>
-                     <Insets top="100.0" />
+                     <Insets />
                   </VBox.margin>
-                  <children>
-                     <Label text="Selamat Datang" textFill="#493628">
-                        <font>
-                           <Font name="Segoe UI Bold" size="30.0" />
-                        </font>
-                     </Label>
-                     <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Silahkan masuk ke akun Anda" textAlignment="CENTER" textFill="#ab886d" wrapText="true">
-                        <VBox.margin>
-                           <Insets />
-                        </VBox.margin>
-                        <font>
-                           <Font name="Segoe UI Bold" size="15.0" />
-                        </font>
-                     </Label>
-                  </children>
+                  <font>
+                     <Font name="Segoe UI Bold" size="15.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <VBox spacing="16.0">
+               <VBox alignment="CENTER_LEFT">
+                  <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Identifier" textAlignment="CENTER" textFill="#493628" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="identifierTextField" promptText="Masukkan email/NIM/NIP/NIDN anda" />
                </VBox>
-               <VBox prefHeight="200.0" prefWidth="100.0">
-                  <children>
-                     <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Email" textAlignment="CENTER" textFill="#493628" wrapText="true">
-                        <font>
-                           <Font name="Segoe UI" size="15.0" />
-                        </font>
-                        <padding>
-                           <Insets top="30.0" />
-                        </padding>
-                     </Label>
-                     <TextField promptText="Masukkan email anda" />
-                     <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Password" textAlignment="CENTER" textFill="#493628" wrapText="true">
-                        <font>
-                           <Font name="Segoe UI" size="15.0" />
-                        </font>
-                        <padding>
-                           <Insets top="15.0" />
-                        </padding>
-                     </Label>
-                     <PasswordField promptText="Masukkan password anda" />
-                  </children>
-                  <VBox.margin>
-                     <Insets left="50.0" right="50.0" top="15.0" />
-                  </VBox.margin>
+               <VBox>
+                  <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Kata Sandi" textAlignment="CENTER" textFill="#493628" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="passwordField" promptText="Masukkan password anda" />
                </VBox>
-               <VBox prefHeight="200.0" prefWidth="100.0">
-                  <children>
-                     <HBox alignment="CENTER" prefHeight="38.0" prefWidth="442.0" style="-fx-background-color: #493628; -fx-background-radius: 15;">
-                        <children>
-                           <Label text="Masuk" textFill="WHITE">
-                              <font>
-                                 <Font name="Segoe UI Bold" size="15.0" />
-                              </font>
-                           </Label>
-                        </children>
-                        <VBox.margin>
-                           <Insets left="50.0" right="50.0" />
-                        </VBox.margin>
-                     </HBox>
-                  </children>
-               </VBox>
-            </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onLogin" prefHeight="32.0" prefWidth="300.0" style="-fx-background-radius: 30; -fx-background-color: #493628;" text="Masuk" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                     <Font name="Segoe UI Black" size="15.0" />
+                  </font>
+               </Button>
+            </VBox>
          </VBox>
-         <ImageView fitHeight="573.0" fitWidth="442.0" pickOnBounds="true">
-            <image>
-               <Image url="@../images/gambarkanan.jpg" />
-            </image>
+         <ImageView fitHeight="480.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/gambarkanan.jpg" />
          </ImageView>
-      </children>
-   </HBox>
+      </HBox>
+   </VBox>
 </AnchorPane>

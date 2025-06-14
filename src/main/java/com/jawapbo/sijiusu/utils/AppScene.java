@@ -1,7 +1,9 @@
 package com.jawapbo.sijiusu.utils;
 
 public enum AppScene {
-    LOGIN("login-view", "Login Scene")
+    LOGIN("login-view", "Login Scene"),
+    ADMIN_DASHBOARD("admin-dashboard", "Admin Dashboard"),
+    STUDENT_PROFILE("student-profile", "Student Profile"),
 
     ;
 

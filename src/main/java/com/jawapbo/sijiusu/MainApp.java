@@ -15,7 +15,6 @@ public class MainApp extends Application {
     public void start(Stage stage) {
         try {
             AppScene firstScene = AppScene.LOGIN;
-
             var controller = new Controller();
 
             controller.setStage(stage);
