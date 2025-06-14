@@ -1,12 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1">
-    <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
-        <Label text="Label"/>
-        <Button mnemonicParsing="false" text="Button"/>
-    </VBox>
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <HBox layoutX="198.0" layoutY="74.0" prefHeight="573.0" prefWidth="884.0" style="-fx-background-color: #FFFFFF;">
+      <children>
+         <VBox prefHeight="554.0" prefWidth="462.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+               <VBox alignment="CENTER" prefHeight="61.0" prefWidth="442.0">
+                  <VBox.margin>
+                     <Insets top="100.0" />
+                  </VBox.margin>
+                  <children>
+                     <Label text="Selamat Datang" textFill="#493628">
+                        <font>
+                           <Font name="Segoe UI Bold" size="30.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Silahkan masuk ke akun Anda" textAlignment="CENTER" textFill="#ab886d" wrapText="true">
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                        <font>
+                           <Font name="Segoe UI Bold" size="15.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Email" textAlignment="CENTER" textFill="#493628" wrapText="true">
+                        <font>
+                           <Font name="Segoe UI" size="15.0" />
+                        </font>
+                        <padding>
+                           <Insets top="30.0" />
+                        </padding>
+                     </Label>
+                     <TextField promptText="Masukkan email anda" />
+                     <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Password" textAlignment="CENTER" textFill="#493628" wrapText="true">
+                        <font>
+                           <Font name="Segoe UI" size="15.0" />
+                        </font>
+                        <padding>
+                           <Insets top="15.0" />
+                        </padding>
+                     </Label>
+                     <PasswordField promptText="Masukkan password anda" />
+                  </children>
+                  <VBox.margin>
+                     <Insets left="50.0" right="50.0" top="15.0" />
+                  </VBox.margin>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="38.0" prefWidth="442.0" style="-fx-background-color: #493628; -fx-background-radius: 15;">
+                        <children>
+                           <Label text="Masuk" textFill="WHITE">
+                              <font>
+                                 <Font name="Segoe UI Bold" size="15.0" />
+                              </font>
+                           </Label>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="50.0" right="50.0" />
+                        </VBox.margin>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <ImageView fitHeight="573.0" fitWidth="442.0" pickOnBounds="true">
+            <image>
+               <Image url="@../images/gambarkanan.jpg" />
+            </image>
+         </ImageView>
+      </children>
+   </HBox>
 </AnchorPane>
