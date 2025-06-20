@@ -26,13 +26,11 @@ public class AdminDashboardController extends Controller {
 
     @FXML
     private void onProfil() {
-
         try {
             switchScene(AppScene.ADMIN_PROFILE);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
@@ -73,8 +71,7 @@ public class AdminDashboardController extends Controller {
     }
 
     @FXML
-    private void onManajemenPengguna() throws IOException {
-
+    private void onManajemenPengguna() {
         try {
             switchScene(AppScene.ADMIN_DASHBOARD_USER);
         } catch (IOException e) {
@@ -89,6 +86,5 @@ public class AdminDashboardController extends Controller {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

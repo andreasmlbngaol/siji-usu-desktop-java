@@ -25,12 +25,12 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="profilButton" mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" onAction="#onProfile" mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" onAction="#onKeluar" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -42,7 +42,7 @@
                 </HBox>
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard admin">
+                        <Button fx:id="backtodashboardButton" onAction="#onBack" mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard admin">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -68,7 +68,7 @@
                <children>
                   <VBox alignment="CENTER">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Dosen" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="dosenButton" onAction="#onDosen" alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Dosen" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="25.0" />
                            </font>
@@ -89,7 +89,7 @@
                <children>
                   <VBox alignment="CENTER">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Mahasiswa" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="mahasiswaButton" onAction="#onMahasiswa" alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Mahasiswa" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="25.0" />
                            </font>
