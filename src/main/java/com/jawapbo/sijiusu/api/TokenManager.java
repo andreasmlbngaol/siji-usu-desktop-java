@@ -11,6 +11,21 @@ public class TokenManager {
         refreshToken = tokens.refreshToken();
     }
 
+    public static void clearTokens() {
+        // Set tokens ke null atau empty string
+        // Sesuaikan dengan implementasi TokenManager Anda
+
+        // Contoh implementasi:
+        // accessToken = null;
+        // refreshToken = null;
+
+        // Atau jika menggunakan static fields:
+        // TokenManager.accessToken = null;
+        // TokenManager.refreshToken = null;
+
+        System.out.println("Tokens cleared successfully");
+    }
+
     public static String getAccessToken() {
         return accessToken;
     }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.students.StudentsDashboard">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardController">
     <children>
         <VBox fillWidth="false" prefHeight="720.0" prefWidth="1280.0" spacing="100.0">
             <children>
@@ -25,12 +25,12 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onProfil" style="-fx-background-color: transparent;" text="Profil" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" mnemonicParsing="false" onAction="#onKeluar" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -47,47 +47,47 @@
                     <effect>
                         <DropShadow blurType="GAUSSIAN" />
                     </effect>
-               <children>
-                  <VBox alignment="CENTER">
-                     <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Manajemen Pengguna" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Bold" size="25.0" />
-                           </font>
-                        </Button>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="329.0" text="Kelola pengguna Universitas" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
+                    <children>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <Button fx:id="manajemenPenggunaButton" alignment="CENTER" mnemonicParsing="false" onAction="#onManajemenPengguna" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Manajemen Pengguna" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="25.0" />
+                                    </font>
+                                </Button>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="329.0" text="Kelola pengguna Universitas" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
                 </VBox>
-            <VBox alignment="CENTER" prefHeight="179.0" prefWidth="1178.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
-               <effect>
-                  <DropShadow blurType="GAUSSIAN" />
-               </effect>
-               <children>
-                  <VBox alignment="CENTER">
-                     <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Manajemen Akademik" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Bold" size="25.0" />
-                           </font>
-                        </Button>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="329.0" text="Kelola Universitas" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-               <VBox.margin>
-                  <Insets left="50.0" right="50.0" />
-               </VBox.margin>
-            </VBox>
+                <VBox alignment="CENTER" prefHeight="179.0" prefWidth="1178.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
+                    <effect>
+                        <DropShadow blurType="GAUSSIAN" />
+                    </effect>
+                    <children>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <Button fx:id="manajemenAkademikButton" alignment="CENTER" mnemonicParsing="false" onAction="#onManajemenAkademik" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Manajemen Akademik" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="25.0" />
+                                    </font>
+                                </Button>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="329.0" text="Kelola Universitas" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                    </VBox.margin>
+                </VBox>
             </children>
         </VBox>
     </children>
