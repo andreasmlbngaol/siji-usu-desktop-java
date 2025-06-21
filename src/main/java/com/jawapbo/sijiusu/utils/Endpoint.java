@@ -1,7 +1,9 @@
 package com.jawapbo.sijiusu.utils;
 
 public enum Endpoint {
-    LOGIN("/auth/login")
+    LOGIN("/auth/login"),
+    GET_ADMIN("/admins"),
+    CHANGE_PASSWORD("/auth/password")
 
     ;
 

@@ -1,6 +1,7 @@
 package com.jawapbo.sijiusu.views;
 
 import com.jawapbo.sijiusu.MainApp;
+import com.jawapbo.sijiusu.auth.TokenManager;
 import com.jawapbo.sijiusu.utils.AppScene;
 import com.jawapbo.sijiusu.utils.StringRes;
 import com.jawapbo.sijiusu.utils.StyledAlert;
@@ -14,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Controller {
@@ -79,6 +81,28 @@ public class Controller {
 
         if (confirmed) {
             System.exit(0);
+        }
+    }
+
+    @FXML
+    public void onSignOut() {
+        try {
+            TokenManager.clearTokens();
+
+            var file = new File("tokens.json");
+            if(file.exists() ) {
+                if(file.delete()) {
+                    System.out.println("Token file deleted successfully.");
+                } else {
+                    System.out.println("Failed to delete token file.");
+                }
+            }
+            StyledAlert.show("Signed Out", "You have successfully signed out.");
+            switchScene(AppScene.LOGIN);
+        } catch (IOException e) {
+            StyledAlert.show("Error", "Failed to switch to login scene: " + e.getMessage());
+        } catch (Exception e) {
+            StyledAlert.show("Error", "Failed to clear tokens: " + e.getMessage());
         }
     }
 }

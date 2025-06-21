@@ -1,8 +1,6 @@
 package com.jawapbo.sijiusu.views;
 
-import com.jawapbo.sijiusu.api.TokenManager;
 import com.jawapbo.sijiusu.utils.AppScene;
-import com.jawapbo.sijiusu.utils.StyledAlert;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -25,7 +23,7 @@ public class AdminDashboardController extends Controller {
     }
 
     @FXML
-    private void onProfil() {
+    private void onSwitchToProfile() {
         try {
             switchScene(AppScene.ADMIN_PROFILE);
         } catch (IOException e) {
@@ -33,42 +31,6 @@ public class AdminDashboardController extends Controller {
         }
     }
 
-    @FXML
-    private void onKeluar() {
-        try {
-            // Hapus token dulu
-            TokenManager.clearTokens();
-
-            // Kembali ke login scene
-            switchScene(AppScene.LOGIN);
-
-            // Show logout message dengan alert biasa
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-            alert.setTitle("Info");
-            alert.setHeaderText(null);
-            alert.setContentText("Anda telah berhasil keluar dari sistem.");
-            alert.showAndWait();
-
-        } catch (IOException e) {
-            System.err.println("Error switching to login scene: " + e.getMessage());
-            e.printStackTrace();
-
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Gagal kembali ke halaman login: " + e.getMessage());
-            alert.showAndWait();
-        } catch (Exception e) {
-            System.err.println("Error clearing tokens: " + e.getMessage());
-            e.printStackTrace();
-
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Terjadi kesalahan: " + e.getMessage());
-            alert.showAndWait();
-        }
-    }
 
     @FXML
     private void onManajemenPengguna() {

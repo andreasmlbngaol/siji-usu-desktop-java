@@ -2,7 +2,8 @@ package com.jawapbo.sijiusu.views;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jawapbo.sijiusu.api.ApiClient;
-import com.jawapbo.sijiusu.api.TokenManager;
+import com.jawapbo.sijiusu.auth.JWTHandler;
+import com.jawapbo.sijiusu.auth.TokenManager;
 import com.jawapbo.sijiusu.response.TokenResponse;
 import com.jawapbo.sijiusu.utils.AppScene;
 import com.jawapbo.sijiusu.utils.Endpoint;
@@ -12,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+
+import java.io.File;
 
 public class LoginController extends Controller {
     @FXML private TextField identifierTextField;
@@ -55,11 +58,27 @@ public class LoginController extends Controller {
         );
 
         try {
-            if (response.statusCode() == 200) {
-                TokenManager.setTokens(Mapper.getInstance().readValue(response.body(), TokenResponse.class));
+            if (response.statusCode() >= 200 && response.statusCode() < 300) {
+                var tokens = Mapper.getInstance().readValue(response.body(), TokenResponse.class);
+
+
+                TokenManager.setTokens(tokens);
+                var file = new File("tokens.json");
+                Mapper.getInstance().writeValue(file, tokens);
+                System.out.println("Token file path: " + file.getAbsolutePath());
+
+
+                var role = JWTHandler.extractRole(tokens.accessToken());
                 StyledAlert.show("Success", "Login successful!");
 
+                switch (role) {
+                    case Admin -> switchScene(AppScene.ADMIN_DASHBOARD);
+//                    case Student -> switchScene(AppScene.STUDENT_DASHBOARD);
+//                    case Lecturer -> switchScene(AppScene.LECTURER_DASHBOARD);
+                }
                 switchScene(AppScene.ADMIN_DASHBOARD);
+            } else {
+                StyledAlert.show("Error", "Failed to login: Identifier or password is incorrect.");
             }
         } catch (JsonProcessingException e) {
             StyledAlert.show("Error", "Failed to parse response: " + e.getMessage());

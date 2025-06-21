@@ -1,4 +1,4 @@
-package com.jawapbo.sijiusu.api;
+package com.jawapbo.sijiusu.auth;
 
 import com.jawapbo.sijiusu.response.TokenResponse;
 

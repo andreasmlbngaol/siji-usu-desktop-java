@@ -1,6 +1,6 @@
 package com.jawapbo.sijiusu.views;
 
-import com.jawapbo.sijiusu.api.TokenManager;
+import com.jawapbo.sijiusu.auth.TokenManager;
 import com.jawapbo.sijiusu.utils.AppScene;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

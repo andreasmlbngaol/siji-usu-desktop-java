@@ -1,6 +1,7 @@
 package com.jawapbo.sijiusu.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jawapbo.sijiusu.auth.TokenManager;
 import com.jawapbo.sijiusu.response.TokenResponse;
 
 import java.io.IOException;
@@ -35,6 +36,21 @@ public class ApiClient {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + TokenManager.getAccessToken())
                 .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+
+            return sendWithRetry(request);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to send POST request", e);
+        }
+    }
+
+    public static HttpResponse<String> patch(String endpoint, String body) {
+        try {
+            var request = HttpRequest.newBuilder()
+                .uri(URI.create(BASE_URL + endpoint))
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + TokenManager.getAccessToken())
+                .method("PATCH", HttpRequest.BodyPublishers.ofString(body))
                 .build();
 
             return sendWithRetry(request);

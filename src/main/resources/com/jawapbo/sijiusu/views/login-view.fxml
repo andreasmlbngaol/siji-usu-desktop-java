@@ -25,12 +25,12 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin>
-               <Label text="Selamat Datang" textFill="#493628">
+               <Label text="Welcome" textFill="#493628">
                   <font>
                      <Font name="Segoe UI Bold" size="30.0" />
                   </font>
                </Label>
-               <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Silahkan masuk ke akun Anda" textAlignment="CENTER" textFill="#ab886d" wrapText="true">
+               <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Login to your account" textAlignment="CENTER" textFill="#ab886d" wrapText="true">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
@@ -46,19 +46,19 @@
                         <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="identifierTextField" promptText="Masukkan email/NIM/NIP/NIDN anda" />
+                  <TextField fx:id="identifierTextField" promptText="Insert your email/NIM/NIP/NIDN" />
                </VBox>
                <VBox>
-                  <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Kata Sandi" textAlignment="CENTER" textFill="#493628" wrapText="true">
+                  <Label alignment="CENTER" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="Password" textAlignment="CENTER" textFill="#493628" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="passwordField" promptText="Masukkan password anda" />
+                  <PasswordField fx:id="passwordField" promptText="Insert your password" />
                </VBox>
             </VBox>
             <VBox alignment="CENTER">
-               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onLogin" prefHeight="32.0" prefWidth="300.0" style="-fx-background-radius: 30; -fx-background-color: #493628;" text="Masuk" textAlignment="CENTER" textFill="WHITE">
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onLogin" prefHeight="32.0" prefWidth="300.0" style="-fx-background-radius: 30; -fx-background-color: #493628;" text="Login" textAlignment="CENTER" textFill="WHITE">
                   <font>
                      <Font name="Segoe UI Black" size="15.0" />
                   </font>
