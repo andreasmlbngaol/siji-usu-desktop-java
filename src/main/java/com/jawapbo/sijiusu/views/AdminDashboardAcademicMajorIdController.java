@@ -83,7 +83,11 @@ public class AdminDashboardAcademicMajorIdController extends Controller{
 
         card.setOnMouseClicked(event -> {
             DataManager.setCourseId(course.id());
-//            switchScene(AppScene.ADMIN_DASHBOARD_COURSE_SECTION);
+            try {
+                switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_SECTION);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
 
         return card;
