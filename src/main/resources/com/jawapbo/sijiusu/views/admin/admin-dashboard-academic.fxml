@@ -25,12 +25,12 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" onAction="#onSwitchToProfile" mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
                         </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" onAction="#onSignOut" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -50,7 +50,7 @@
                <children>
                   <VBox alignment="CENTER">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Fakultas" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="manajemenFakultasButton" onAction="#onFakultas" alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Fakultas" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="25.0" />
                            </font>
@@ -71,7 +71,7 @@
                <children>
                   <VBox alignment="CENTER">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Jurusan" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="manajemenJurusanButton" onAction="#onJurusan" alignment="CENTER" mnemonicParsing="false" prefHeight="86.0" prefWidth="1176.0" style="-fx-background-color: transparent;" text="Jurusan" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="25.0" />
                            </font>
