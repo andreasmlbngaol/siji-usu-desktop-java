@@ -83,7 +83,6 @@ public class AdminDashboardUserLecturerController extends Controller{
             -fx-border-radius: 15px;
             """
         );
-        VBox.setMargin(card, new Insets(0, 0, 0, 0));
         card.setSpacing(16);
         card.setPadding(new Insets(0, 30, 0, 30));
         card.setMaxWidth(1280);
@@ -159,13 +158,11 @@ public class AdminDashboardUserLecturerController extends Controller{
 
     @FXML
     private void onProfile() {
-
         try {
             switchScene(AppScene.ADMIN_PROFILE);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML

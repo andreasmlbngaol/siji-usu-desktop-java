@@ -4,7 +4,7 @@ public enum AppScene {
     LOGIN("login-view", "Login Scene"),
     ADMIN_DASHBOARD("admin/admin-dashboard", "Admin Dashboard"),
     ADMIN_DASHBOARD_ACADEMIC_MAJOR("admin/admin-dashboard-academic-major", "Admin Dashboard Academic"),
-    ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID("admin/admin-dashboard-academic-major-id", "Admin Dashboard Academic"),
+    ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSES("admin/admin-dashboard-academic-major-id", "Admin Dashboard Academic"),
     ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_CREATE("admin/admin-dashboard-academic-major-id-courses-create", "Admin Dashboard Academic"),
     ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_SECTION("admin/admin-dashboard-academic-major-id-courses-section", "Admin Dashboard Academic"),
     ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_SECTION_CREATE("admin/admin-dashboard-academic-major-id-courses-section-create", "Admin Dashboard Academic"),

@@ -36,7 +36,7 @@ public class AdminDashboardAcademicMajorIdCoursesCreateController extends Contro
     @FXML
     private void onBackDashboard() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSES);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

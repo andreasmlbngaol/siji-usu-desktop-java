@@ -1,41 +1,35 @@
-package com.jawapbo.sijiusu.views;
+package com.jawapbo.sijiusu.temp;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.jawapbo.sijiusu.api.ApiClient;
+import com.jawapbo.sijiusu.response.admin.CourseResponse;
 import com.jawapbo.sijiusu.response.admin.MajorResponse;
-import com.jawapbo.sijiusu.utils.*;
+import com.jawapbo.sijiusu.response.admin.SectionResponse;
+import com.jawapbo.sijiusu.utils.DataManager;
+import com.jawapbo.sijiusu.utils.Endpoint;
+import com.jawapbo.sijiusu.utils.Mapper;
+import com.jawapbo.sijiusu.utils.StyledAlert;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-
-import java.io.IOException;
-import java.util.List;
 
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFont;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontColor;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;
 
-public class AdminDashboardAcademicMajorController extends Controller{
-
-    @FXML private Button profilButton;
-    @FXML private Button keluarButton;
-    @FXML private Button dashboardButton;
-
-    @FXML private VBox itemsContainer;
-
+public class AdminAcademicCourseSectionController {
+    @FXML
+    private VBox itemsContainer;
 
     @FXML
     private void initialize() {
-        // Add hover effects to buttons
-        addHoverEffect(profilButton);
-        addHoverEffect(keluarButton);
-        addHoverEffect(dashboardButton);
-
-        var response = ApiClient.get(Endpoint.ADMIN_GET_MAJORS.getPath());
+        var response = ApiClient.get(
+            Endpoint.ADMIN_GET_COURSE_BY_ID.getPath()
+                .formatted(DataManager.getCourseId())
+        );
 
         if (response.statusCode() != 200) {
             StyledAlert.show("Error", "Failed to load majors data.");
@@ -43,13 +37,15 @@ public class AdminDashboardAcademicMajorController extends Controller{
         }
 
         try {
-            var majors = Mapper.getInstance().readValue(response.body(), new TypeReference<List<MajorResponse>>() {});
-            majors.stream()
+            var course = Mapper.getInstance().readValue(response.body(), new TypeReference<CourseResponse>() {});
+            var sections = course.sections();
+
+            sections.stream()
                 .sorted((m1, m2) -> m1.name().compareToIgnoreCase(m2.name()))
-                .forEach(major ->
+                .forEach(section ->
                     itemsContainer.getChildren()
-                        .add(createMajorCard(
-                            major
+                        .add(createSectionCard(
+                            section
                         ))
                 );
         } catch (Exception e) {
@@ -57,7 +53,7 @@ public class AdminDashboardAcademicMajorController extends Controller{
         }
     }
 
-    private VBox createMajorCard(MajorResponse major) {
+    private VBox createSectionCard(SectionResponse section) {
         VBox card = new VBox();
         card.setAlignment(Pos.TOP_LEFT);
         card.setStyle("""
@@ -68,24 +64,24 @@ public class AdminDashboardAcademicMajorController extends Controller{
             """
         );
         card.setSpacing(16);
-        card.setPadding(new Insets(30, 30, 30, 30));
+        card.setPadding(new Insets(0, 30, 0, 30));
         card.setMaxWidth(1280);
 
-        var nameLabel = new Label(major.name());
+        var nameLabel = new Label(section.name());
         nameLabel.setPadding(new Insets(15, 0, 0, 0));
         setFont(nameLabel, "Segoe UI", 25);
         setFontColor(nameLabel, "#ffffff");
         setFontWeight(nameLabel, "bold");
 
-//        var codeLabel = new Label("Code");
-//        var codeValue = new Label(major.code());
-//
-        var facultyLabel = new Label("Faculty");
-        var facultyValue = new Label(major.faculty().name());
+        var lecturereLabel = new Label("Lecturer");
+        var lecturerValue = new Label(section.lecturer());
+
+        var roomLabel = new Label("Room");
+        var roomValue = new Label(section.room());
 
         var gridCells = new Label[][] {
-//            {codeLabel, codeValue},
-            {facultyLabel, facultyValue},
+            {lecturereLabel, lecturerValue},
+            {roomLabel, roomValue},
         };
 
         var gridPane = new GridPane(0, 16);
@@ -108,43 +104,11 @@ public class AdminDashboardAcademicMajorController extends Controller{
         );
 
         card.setOnMouseClicked(event -> {
-            DataManager.setMajorId(major.id());
-            try {
-                switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSES);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            DataManager.setMajorId(section.id());
+//            switchScene(AppScene.ADMIN_DASHBOARD_COURSES);
         });
 
-        addHoverEffect(card);
         return card;
-    }
-
-    @FXML
-    private void onSwitchToProfile() {
-        try {
-            switchScene(AppScene.ADMIN_PROFILE);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    private void onBackDashboard() {
-        try {
-            switchScene(AppScene.ADMIN_DASHBOARD);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    private void onCourse() {
-        try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSES);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 }
