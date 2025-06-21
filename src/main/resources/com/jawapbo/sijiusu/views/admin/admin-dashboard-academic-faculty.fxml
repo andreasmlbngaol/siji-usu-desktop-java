@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicFacultyController">
     <children>
         <VBox fillWidth="false" prefHeight="720.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -28,7 +28,7 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onSwitchToProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -71,7 +71,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="121.0" prefWidth="1178.0">
                      <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAdd" prefHeight="119.0" prefWidth="1178.0" style="-fx-background-color: transparent;" text="Buat Fakultas Baru" textFill="WHITE">
+                        <Button fx:id="newFakultasButton" mnemonicParsing="false" onAction="#onNewFakultas" prefHeight="119.0" prefWidth="1178.0" style="-fx-background-color: transparent;" text="Buat Fakultas Baru" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="30.0" />
                            </font>
@@ -105,7 +105,7 @@
                                 <Insets left="20.0" />
                             </padding>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Nama Fakultas" textFill="WHITE">
+                        <Button fx:id="namaFakultasButton" onAction="#onNamaFakultas" mnemonicParsing="false" prefHeight="48.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Nama Fakultas" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="25.0" />
                            </font>
@@ -145,7 +145,7 @@
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="1285.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to right, #d97706, #fbbf24);" text="EDIT" textFill="WHITE">
+                        <Button fx:id="editFakultasButton" onAction="#onEditFakultas" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to right, #d97706, #fbbf24);" text="EDIT" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="15.0" />
                            </font>
