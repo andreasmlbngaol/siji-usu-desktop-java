@@ -144,6 +144,9 @@ public class AdminDashboardUserLecturerController extends Controller{
         var editButtonContainer = new HBox(editButton);
         editButtonContainer.setAlignment(Pos.CENTER_RIGHT);
         editButtonContainer.setPadding(new Insets(0, 15, 15, 0));
+        editButton.setOnAction(event -> {
+            StyledAlert.show("Coming Soon", "This feature is coming soon!");
+        });
 
         card.getChildren().addAll(
             nameLabel,
