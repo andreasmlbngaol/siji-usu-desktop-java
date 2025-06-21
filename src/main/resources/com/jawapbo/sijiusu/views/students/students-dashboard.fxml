@@ -21,12 +21,7 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
-                            <font>
-                                <Font name="Segoe UI Bold" size="15.0" />
-                            </font>
-                        </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button mnemonicParsing="false" onAction="#onSignOut" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -38,7 +33,7 @@
                 </HBox>
             <ScrollPane hbarPolicy="NEVER" vbarPolicy="NEVER">
                <content>
-                  <VBox prefWidth="1280.0" style="-fx-background-color: #D6C0B3;">
+                  <VBox prefWidth="1280.0" spacing="16.0" style="-fx-background-color: #D6C0B3;">
                      <children>
                             <VBox alignment="CENTER" prefHeight="179.0" prefWidth="1180.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
                                 <effect>

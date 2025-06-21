@@ -29,9 +29,8 @@ public class MainApp extends Application {
                 TokenManager.setTokens(tokens);
                 switch (JWTHandler.extractRole(tokens.accessToken())) {
                     case Admin -> firstScene = AppScene.ADMIN_DASHBOARD;
-//                    case Lecturer -> firstScene = AppScene.LECTURER_DASHBOARD;
-//                    case Student -> firstScene = AppScene.STUDENT_DASHBOARD;
-//                    default -> firstScene = AppScene.LOGIN;
+                    case Lecturer -> firstScene = AppScene.LECTURER_DASHBOARD;
+                    case Student -> firstScene = AppScene.STUDENT_DASHBOARD;
                 }
             }
 

@@ -18,8 +18,8 @@ public enum AppScene {
     ADMIN_PROFILE("admin/admin-profile", "Admin Profile"),
 
     STUDENT_DASHBOARD("students/students-dashboard", "Student Dashboard"),
-    STUDENT_PROFILE("students/student-profile", "Student Profile"),
-    STUDENT_COURSE_SECTION("students/student-course-section", "Student Course Section"),
+    STUDENT_PROFILE("students/students-profile", "Student Profile"),
+    STUDENT_COURSE_SECTION("students/students-course-section", "Student Course Section"),
 
     LECTURER_DASHBOARD("lecturers/lecturers-dashboard", "Lecturer Dashboard"),
     LECTURER_PROFILE("lecturers/lecturers-profile", "Lecturer Profile"),
