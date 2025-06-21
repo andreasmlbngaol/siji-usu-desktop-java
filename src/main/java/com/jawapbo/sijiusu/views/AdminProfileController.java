@@ -2,6 +2,7 @@ package com.jawapbo.sijiusu.views;
 
 import com.jawapbo.sijiusu.api.ApiClient;
 import com.jawapbo.sijiusu.response.AdminDataResponse;
+import com.jawapbo.sijiusu.utils.AppScene;
 import com.jawapbo.sijiusu.utils.Endpoint;
 import com.jawapbo.sijiusu.utils.Mapper;
 import com.jawapbo.sijiusu.utils.StyledAlert;
@@ -9,7 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
-public class AdminProfileController {
+public class AdminProfileController extends Controller {
 
     @FXML private Label nameLabel;
     @FXML private Label emailLabel;
@@ -34,6 +35,14 @@ public class AdminProfileController {
             }
         } catch (Exception e) {
             System.err.println("An error occurred while retrieving admin data: " + e.getMessage());
+        }
+    }
+
+    @FXML private void onBackToDashboard() {
+        try {
+            switchScene(AppScene.ADMIN_DASHBOARD);
+        } catch (Exception e) {
+            StyledAlert.show("Error", "An error occurred while switching scenes: " + e.getMessage());
         }
     }
 

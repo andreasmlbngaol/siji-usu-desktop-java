@@ -35,42 +35,6 @@ public class AdminDashboardUserLecturerController extends Controller{
     }
 
     @FXML
-    private void onKeluar() {
-        try {
-            // Hapus token dulu
-            TokenManager.clearTokens();
-
-            // Kembali ke login scene
-            switchScene(AppScene.LOGIN);
-
-            // Show logout message dengan alert biasa
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-            alert.setTitle("Info");
-            alert.setHeaderText(null);
-            alert.setContentText("Anda telah berhasil keluar dari sistem.");
-            alert.showAndWait();
-
-        } catch (IOException e) {
-            System.err.println("Error switching to login scene: " + e.getMessage());
-            e.printStackTrace();
-
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Gagal kembali ke halaman login: " + e.getMessage());
-            alert.showAndWait();
-        } catch (Exception e) {
-            System.err.println("Error clearing tokens: " + e.getMessage());
-
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Terjadi kesalahan: " + e.getMessage());
-            alert.showAndWait();
-        }
-    }
-
-    @FXML
     private void onBack(){
         try {
             switchScene(AppScene.ADMIN_DASHBOARD_USER);

@@ -6,171 +6,155 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;"
-            xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.jawapbo.sijiusu.views.AdminProfileController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminProfileController">
    <VBox prefHeight="720.0" prefWidth="1280.0" spacing="30.0">
-      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="1280.0"
-            style="-fx-background-color: #493628; -fx-padding: 12 14;">
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="1280.0" style="-fx-background-color: #493628; -fx-padding: 12 14;">
          <opaqueInsets>
-            <Insets/>
+            <Insets />
          </opaqueInsets>
          <effect>
-            <DropShadow/>
+            <DropShadow />
          </effect>
-         <Label style="-fx-text-fill: white;" text="SIJI USU JEUS" textFill="WHITE">
+         <Label onMouseClicked="#onBackToDashboard" style="-fx-text-fill: white;" text="SIJI USU JEUS" textFill="WHITE">
             <font>
-               <Font name="Segoe UI Bold" size="30.0"/>
+               <Font name="Segoe UI Bold" size="30.0" />
             </font>
          </Label>
-         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS"/>
-         <Button mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil"
-                 textFill="#d6c0b3">
+         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
+         <Button mnemonicParsing="false" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
             <font>
-               <Font name="Segoe UI Bold" size="15.0"/>
+               <Font name="Segoe UI Bold" size="15.0" />
             </font>
          </Button>
-         <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar"
-                 textFill="#d6c0b3">
+         <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
             <font>
-               <Font name="Segoe UI Bold" size="15.0"/>
+               <Font name="Segoe UI Bold" size="15.0" />
             </font>
          </Button>
       </HBox>
       <VBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="1280.0">
          <VBox.margin>
-            <Insets/>
+            <Insets />
          </VBox.margin>
          <Label text="My Profile" textFill="#493628">
             <font>
-               <Font name="Segoe UI Bold" size="25.0"/>
+               <Font name="Segoe UI Bold" size="25.0" />
             </font>
             <padding>
-               <Insets left="50.0" right="50.0"/>
+               <Insets left="50.0" right="50.0" />
             </padding>
          </Label>
       </VBox>
-      <VBox prefHeight="120.0" prefWidth="1180.0" spacing="12.0"
-            style="-fx-background-color: white; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
+      <VBox prefHeight="120.0" prefWidth="1180.0" spacing="12.0" style="-fx-background-color: white; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
          <VBox.margin>
-            <Insets left="50.0" right="50.0"/>
+            <Insets left="50.0" right="50.0" />
          </VBox.margin>
          <effect>
-            <DropShadow blurType="GAUSSIAN"/>
+            <DropShadow blurType="GAUSSIAN" />
          </effect>
          <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1178.0">
             <VBox.margin>
-               <Insets left="50.0"/>
+               <Insets left="50.0" />
             </VBox.margin>
             <Label text="Profile Information" textFill="#493628">
                <font>
-                  <Font name="Segoe UI Bold" size="20.0"/>
+                  <Font name="Segoe UI Bold" size="20.0" />
                </font>
             </Label>
          </HBox>
          <GridPane alignment="CENTER" prefHeight="214.0" prefWidth="1178.0">
             <columnConstraints>
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <Label text="Full Name" textFill="#d6c0b3">
                <padding>
-                  <Insets left="15.0"/>
+                  <Insets left="15.0" />
                </padding>
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
             <Label fx:id="nameLabel" text="Name" textFill="#d6c0b3" GridPane.columnIndex="1">
                <padding>
-                  <Insets left="15.0"/>
+                  <Insets left="15.0" />
                </padding>
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
             <Label text="Email" textFill="#d6c0b3" GridPane.rowIndex="1">
                <padding>
-                  <Insets left="15.0"/>
+                  <Insets left="15.0" />
                </padding>
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabel" text="Email" textFill="#d6c0b3" GridPane.columnIndex="1"
-                   GridPane.rowIndex="1">
+            <Label fx:id="emailLabel" text="Email" textFill="#d6c0b3" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <padding>
-                  <Insets left="15.0"/>
+                  <Insets left="15.0" />
                </padding>
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
          </GridPane>
       </VBox>
-      <VBox prefHeight="266.0" prefWidth="1280.0" spacing="16.0"
-            style="-fx-background-color: white; -fx-border-color: #493628; -fx-background-radius: 15; -fx-border-radius: 15;">
+      <VBox prefHeight="266.0" prefWidth="1280.0" spacing="16.0" style="-fx-background-color: white; -fx-border-color: #493628; -fx-background-radius: 15; -fx-border-radius: 15;">
          <VBox.margin>
-            <Insets left="50.0" right="50.0"/>
+            <Insets left="50.0" right="50.0" />
          </VBox.margin>
          <effect>
-            <DropShadow blurType="GAUSSIAN"/>
+            <DropShadow blurType="GAUSSIAN" />
          </effect>
          <padding>
-            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
          </padding>
          <Label text="Change Password" textFill="#493628">
             <font>
-               <Font name="Segoe UI Bold" size="20.0"/>
+               <Font name="Segoe UI Bold" size="20.0" />
             </font>
          </Label>
          <VBox layoutX="27.0" layoutY="67.0" prefWidth="100.0">
             <Label text="Old Password" textFill="#d6c0b3">
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
-            <PasswordField fx:id="oldPasswordField" prefHeight="28.0" prefWidth="1123.0"
-                           promptText="Insert Old Password"
-                           style="-fx-border-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;"/>
+            <PasswordField fx:id="oldPasswordField" prefHeight="28.0" prefWidth="1123.0" promptText="Insert Old Password" style="-fx-border-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;" />
          </VBox>
          <VBox prefWidth="100.0">
             <Label text="New Password" textFill="#d6c0b3">
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
-            <PasswordField fx:id="newPasswordField" prefHeight="28.0" prefWidth="1123.0"
-                           promptText="Insert New Password"
-                           style="-fx-border-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;"/>
+            <PasswordField fx:id="newPasswordField" prefHeight="28.0" prefWidth="1123.0" promptText="Insert New Password" style="-fx-border-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;" />
          </VBox>
          <VBox prefWidth="100.0">
             <Label text="Confirm New Password" textFill="#d6c0b3">
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Label>
-            <PasswordField fx:id="confirmPasswordField" prefHeight="28.0" prefWidth="1123.0"
-                           promptText="Insert New Password"
-                           style="-fx-border-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;">
+            <PasswordField fx:id="confirmPasswordField" prefHeight="28.0" prefWidth="1123.0" promptText="Insert New Password" style="-fx-border-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;">
                <VBox.margin>
-                  <Insets/>
+                  <Insets />
                </VBox.margin>
             </PasswordField>
          </VBox>
          <HBox alignment="CENTER" prefHeight="67.0" prefWidth="1178.0">
-            <Button mnemonicParsing="false" onAction="#onChangePassword" prefHeight="28.0" prefWidth="767.0"
-                    style="-fx-background-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;"
-                    text="Update Password" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onChangePassword" prefHeight="28.0" prefWidth="767.0" style="-fx-background-color: #493628; -fx-background-radius: 12; -fx-border-radius: 12;" text="Update Password" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="15.0" right="15.0"/>
+                  <Insets left="15.0" right="15.0" />
                </HBox.margin>
                <font>
-                  <Font name="Segoe UI Bold" size="14.0"/>
+                  <Font name="Segoe UI Bold" size="14.0" />
                </font>
             </Button>
          </HBox>

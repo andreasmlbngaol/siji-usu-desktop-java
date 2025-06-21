@@ -86,6 +86,10 @@ public class Controller {
 
     @FXML
     public void onSignOut() {
+        if(!StyledAlert.showConfirmation("Sign Out", "Are you sure you want to sign out?")) {
+            return;
+        }
+
         try {
             TokenManager.clearTokens();
 
@@ -97,7 +101,6 @@ public class Controller {
                     System.out.println("Failed to delete token file.");
                 }
             }
-            StyledAlert.show("Signed Out", "You have successfully signed out.");
             switchScene(AppScene.LOGIN);
         } catch (IOException e) {
             StyledAlert.show("Error", "Failed to switch to login scene: " + e.getMessage());
