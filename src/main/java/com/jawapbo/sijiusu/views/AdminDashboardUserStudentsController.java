@@ -7,52 +7,20 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class AdminDashboardUserController extends Controller {
+public class AdminDashboardUserStudentsController extends  Controller{
 
     @FXML private Button profilButton;
     @FXML private Button dashboardButton;
     @FXML private Button keluarButton;
-    @FXML private Button dosenButton;
-    @FXML private Button mahasiswaButton;
+    @FXML private Button addButton;
 
     @FXML
     private void initialize() {
         // Add hover effects to buttons
-        addHoverEffect(dosenButton);
-        addHoverEffect(mahasiswaButton);
+        addHoverEffect(addButton);
         addHoverEffect(profilButton);
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
-    }
-
-    @FXML
-    private void onDosen(){
-        try {
-            switchScene(AppScene.ADMIN_DASHBOARD_USER_LECTURER);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    @FXML
-    private void onMahasiswa(){
-        try {
-            switchScene(AppScene.ADMIN_DASHBOARD_USER_STUDENTS);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    @FXML
-    private void onBack(){
-        try {
-            switchScene(AppScene.ADMIN_DASHBOARD);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 
     @FXML
@@ -103,7 +71,24 @@ public class AdminDashboardUserController extends Controller {
         }
     }
 
+    @FXML
+    private void onBack(){
+        try {
+            switchScene(AppScene.ADMIN_DASHBOARD_USER);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
+    }
 
+    @FXML
+    private void onAdd(){
+        try {
+            switchScene(AppScene.ADMIN_DASHBOARD_USER_STUDENTS_REGISTER);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 }

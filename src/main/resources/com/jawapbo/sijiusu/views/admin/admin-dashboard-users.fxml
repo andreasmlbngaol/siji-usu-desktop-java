@@ -42,7 +42,7 @@
                 </HBox>
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button fx:id="backtodashboardButton" onAction="#onBack" mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard admin">
+                        <Button fx:id="dashboardButton" onAction="#onBack" mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard admin">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
