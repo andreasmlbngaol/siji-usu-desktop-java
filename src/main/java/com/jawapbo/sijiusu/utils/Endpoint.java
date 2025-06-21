@@ -11,6 +11,7 @@ public enum Endpoint {
     ADMIN_GET_MAJORS("/admins/academic/faculties/majors"),
     ADMIN_GET_COURSES_BY_MAJOR_ID("/admins/academic/majors/%d/courses"),
     ADMIN_GET_COURSE_BY_ID("/admins/academic/majors/courses/%d"),
+    ADMIN_GET_CREATE_COURSE_WITH_MAJOR_ID("/admins/academic/majors/%d/courses"),
 
     ;
 
