@@ -138,4 +138,14 @@ public class AdminDashboardAcademicMajorIdCoursesSectionController extends Contr
             throw new RuntimeException(e);
         }
     }
+
+    @FXML
+    private void onCreate() {
+        try {
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_SECTION_CREATE);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

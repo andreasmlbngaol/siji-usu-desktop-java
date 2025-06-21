@@ -74,7 +74,7 @@
                              <children>
                                  <VBox alignment="CENTER" prefHeight="121.0" prefWidth="1178.0">
                                      <children>
-                                         <Button fx:id="createButton" mnemonicParsing="false" prefHeight="119.0" prefWidth="1178.0" style="-fx-background-color: transparent;" text="Create new Section" textFill="WHITE">
+                                         <Button fx:id="createButton" onAction="#onCreate" mnemonicParsing="false" prefHeight="119.0" prefWidth="1178.0" style="-fx-background-color: transparent;" text="Create new Section" textFill="WHITE">
                                              <font>
                                                  <Font name="Segoe UI Bold" size="30.0" />
                                              </font>
