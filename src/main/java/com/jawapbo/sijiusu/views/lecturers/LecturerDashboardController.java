@@ -4,6 +4,7 @@ import com.jawapbo.sijiusu.api.ApiClient;
 import com.jawapbo.sijiusu.response.lecturer.LecturerResponse;
 import com.jawapbo.sijiusu.response.student.CoursesTakenResponse;
 import com.jawapbo.sijiusu.response.student.StudentResponse;
+import com.jawapbo.sijiusu.utils.AppScene;
 import com.jawapbo.sijiusu.utils.Endpoint;
 import com.jawapbo.sijiusu.utils.Mapper;
 import com.jawapbo.sijiusu.utils.StyledAlert;
@@ -16,6 +17,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
+
 import static com.jawapbo.sijiusu.utils.JavaFxExt.*;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFont;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontColor;
@@ -24,11 +27,12 @@ import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;
 public class LecturerDashboardController extends Controller {
     @FXML
     private VBox itemsContainer;
-    @FXML
-    private Button signOutButton;
+    @FXML private Button signOutButton;
+    @FXML private Button daftarButton;
 
     @FXML private void initialize() {
         addHoverEffect(signOutButton);
+        addHoverEffect(daftarButton);
 
         var response = ApiClient.get(
             Endpoint.GET_LECTURER_INFO.getPath()
@@ -114,6 +118,15 @@ public class LecturerDashboardController extends Controller {
 
         addHoverEffect(card);
         return card;
+    }
+
+    @FXML
+    private void onDaftar() {
+        try {
+            switchScene(AppScene.LECTURER_SECTION);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

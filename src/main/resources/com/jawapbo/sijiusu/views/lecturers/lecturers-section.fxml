@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.students.StudentsSection">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.lecturers.LecturerSectionController">
     <children>
         <VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -31,12 +31,7 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Profil" textFill="#d6c0b3">
-                            <font>
-                                <Font name="Segoe UI Bold" size="15.0" />
-                            </font>
-                        </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" onAction="#onSignOut" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -50,7 +45,7 @@
                 <!-- Title Bar -->
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard">
+                        <Button fx:id="dashBoardButton" onAction="#onBackDashboard" mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -68,9 +63,9 @@
                 </HBox>
 
                 <!-- Scrollable Content -->
-                <ScrollPane fitToWidth="true" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER" style="-fx-background-color: transparent;">
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" vbarPolicy="AS_NEEDED">
                     <content>
-                        <VBox spacing="20.0" style="-fx-background-color: #D6C0B3;" prefWidth="1180.0">
+                        <VBox prefWidth="1180.0" spacing="20.0" style="-fx-background-color: #D6C0B3;">
                             <!-- Card Section -->
                             <VBox fillWidth="false" prefHeight="266.0" prefWidth="1280.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-background-radius: 15; -fx-border-radius: 15;">
                                 <VBox.margin>
@@ -164,7 +159,7 @@
 
                                     <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="1285.0">
                                         <children>
-                                            <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="148.0" style="-fx-background-color: #32cf3f; -fx-border-radius: 10; -fx-background-radius: 10;" text="Daftar kelas" textFill="WHITE">
+                                            <Button fx:id="daftarButton"  mnemonicParsing="false" prefHeight="29.0" prefWidth="148.0" style="-fx-background-color: #32cf3f; -fx-border-radius: 10; -fx-background-radius: 10;" text="Enroll Class" textFill="WHITE">
                                                 <font>
                                                     <Font name="Segoe UI Bold" size="16.0" />
                                                 </font>
