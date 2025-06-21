@@ -40,7 +40,7 @@ public class AdminDashboardUserStudentsController extends  Controller{
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
 
-        var response = ApiClient.get(Endpoint.ADMIN_GET_STUDENTS.getPath());
+        var response = ApiClient.get(Endpoint.ADMIN_STUDENTS.getPath());
 
         if (response.statusCode() != 200) {
             StyledAlert.show("Error", "Failed to load lecturers data.");
@@ -50,7 +50,9 @@ public class AdminDashboardUserStudentsController extends  Controller{
         try {
 
             var students = Mapper.getInstance().readValue(response.body(), new TypeReference<List<AdminStudentResponse>>() {});
-            students.forEach(student -> {
+            students
+                .stream().sorted((s1, s2) -> s1.name().compareToIgnoreCase(s2.nim()))
+                .forEach(student -> {
                 itemsContainer.getChildren().add(
                     createStudentCard(
                         student.name(),
@@ -136,6 +138,7 @@ public class AdminDashboardUserStudentsController extends  Controller{
         editButton.setPrefHeight(25);
         editButton.setPrefWidth(125);
         addHoverEffect(editButton);
+        editButton.setOnAction(event -> StyledAlert.show("Coming Soon", "This feature is coming soon!"));
 
         var editButtonContainer = new HBox(editButton);
         editButtonContainer.setAlignment(Pos.CENTER_RIGHT);
