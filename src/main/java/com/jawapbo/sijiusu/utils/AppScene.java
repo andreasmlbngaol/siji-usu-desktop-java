@@ -17,8 +17,13 @@ public enum AppScene {
     ADMIN_DASHBOARD_USER_STUDENTS_REGISTER("admin/admin-dashboard-users-students-register", "Admin Dashboard Users Students Register"),
     ADMIN_PROFILE("admin/admin-profile", "Admin Profile"),
 
-    STUDENT_PROFILE("student-profile", "Student Profile"),
+    STUDENT_DASHBOARD("students/students-dashboard", "Student Dashboard"),
+    STUDENT_PROFILE("students/student-profile", "Student Profile"),
+    STUDENT_COURSE_SECTION("students/student-course-section", "Student Course Section"),
 
+    LECTURER_DASHBOARD("lecturers/lecturers-dashboard", "Lecturer Dashboard"),
+    LECTURER_PROFILE("lecturers/lecturers-profile", "Lecturer Profile"),
+    LECTURER_SECTION("lecturers/lecturers-section", "Lecturer Section")
     ;
 
     private final String fxml;

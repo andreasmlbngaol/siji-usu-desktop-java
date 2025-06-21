@@ -71,12 +71,13 @@ public class LoginController extends Controller {
                 var role = JWTHandler.extractRole(tokens.accessToken());
                 StyledAlert.show("Success", "Login successful!");
 
+                System.out.println("Role: " + role);
+
                 switch (role) {
                     case Admin -> switchScene(AppScene.ADMIN_DASHBOARD);
-//                    case Student -> switchScene(AppScene.STUDENT_DASHBOARD);
-//                    case Lecturer -> switchScene(AppScene.LECTURER_DASHBOARD);
+                    case Student -> switchScene(AppScene.STUDENT_DASHBOARD);
+                    case Lecturer -> switchScene(AppScene.LECTURER_DASHBOARD);
                 }
-                switchScene(AppScene.ADMIN_DASHBOARD);
             } else {
                 StyledAlert.show("Error", "Failed to login: Identifier or password is incorrect.");
             }
