@@ -1,8 +1,9 @@
 package com.jawapbo.sijiusu.views;
 
-import com.jawapbo.sijiusu.auth.TokenManager;
-import com.jawapbo.sijiusu.utils.AppScene;
-import com.jawapbo.sijiusu.utils.JavaFxExt;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.jawapbo.sijiusu.api.ApiClient;
+import com.jawapbo.sijiusu.response.admin.AdminLecturerResponse;
+import com.jawapbo.sijiusu.utils.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 import java.io.IOException;
+import java.util.List;
 
 import static com.jawapbo.sijiusu.utils.JavaFxExt.*;
 
@@ -33,26 +35,35 @@ public class AdminDashboardUserLecturerController extends Controller{
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
 
-        itemsContainer
-            .getChildren()
-            .addAll(
-                createLecturerCard(
-                    "Dr. John Doe, M.Sc.",
-                    "test@example.com",
-                    "1234567890",
-                    "9876543210",
-                    "Faculty of Science",
-                    "Department of Physics"
-                ),
-                createLecturerCard(
-                    "Amalia",
-                    "amalia@usu",
-                    "43255512",
-                    "43253525",
-                    "Fasilkom-TI",
-                    "Ilmu Komputer"
-                )
+        var response = ApiClient.get(Endpoint.ADMIN_LECTURERS.getPath());
+
+        if (response.statusCode() != 200) {
+            StyledAlert.show("Error", "Failed to load lecturers data.");
+            return;
+        }
+
+        try {
+            var lecturers = Mapper.getInstance().readValue(response.body(), new TypeReference<List<AdminLecturerResponse>>() {}
             );
+            lecturers
+                .stream().sorted((l1, l2) -> l1.name().compareToIgnoreCase(l2.name()))
+                .forEach(lecturer -> {
+                itemsContainer.getChildren().add(
+                    createLecturerCard(
+                        lecturer.name(),
+                        lecturer.email(),
+                        lecturer.nip(),
+                        lecturer.nidn(),
+                        lecturer.faculty(),
+                        lecturer.department()
+                    )
+                );
+            });
+        } catch (Exception e) {
+            StyledAlert.show("Error", "Failed to load lecturers data. " + e.getMessage());
+            System.out.println("Error parsing lecturers data: " + e.getMessage());
+            return;
+        }
     }
 
     private VBox createLecturerCard(
@@ -72,12 +83,13 @@ public class AdminDashboardUserLecturerController extends Controller{
             -fx-border-radius: 15px;
             """
         );
-        VBox.setMargin(card, new Insets(0, 30, 0, 30));
+        VBox.setMargin(card, new Insets(0, 0, 0, 0));
         card.setSpacing(16);
+        card.setPadding(new Insets(0, 30, 0, 30));
         card.setMaxWidth(1280);
 
         var nameLabel = new Label(lecturerLabel);
-        nameLabel.setPadding(new Insets(15, 0, 0, 30));
+        nameLabel.setPadding(new Insets(15, 0, 0, 0));
         setFont(nameLabel, "Segoe UI", 25);
         setFontColor(nameLabel, "#ffffff");
         setFontWeight(nameLabel, "bold");
@@ -94,7 +106,7 @@ public class AdminDashboardUserLecturerController extends Controller{
         var facultyLabel = new Label("Faculty");
         var facultyValue = new Label(facultyName);
 
-        var departmentLabel = new Label("Department");
+        var departmentLabel = new Label("Major");
         var departmentValue = new Label(departmentName);
 
         var gridCells = new Label[][] {
@@ -109,7 +121,9 @@ public class AdminDashboardUserLecturerController extends Controller{
         for (int i = 0; i < gridCells.length; i++) {
             for (int j = 0; j < gridCells[i].length; j++) {
                 var cell = gridCells[i][j];
-                cell.setPadding(new Insets(0, 30, 0, 30));
+                if(j == 0) {
+                    cell.setPadding(new Insets(0, 20, 0, 0 ));
+                }
                 setFont(cell, "Segoe UI", 15);
                 setFontWeight(cell, "bold");
                 setFontColor(cell, "#ffffff");
@@ -125,6 +139,7 @@ public class AdminDashboardUserLecturerController extends Controller{
             """);
         editButton.setPrefHeight(25);
         editButton.setPrefWidth(125);
+        addHoverEffect(editButton);
 
         var editButtonContainer = new HBox(editButton);
         editButtonContainer.setAlignment(Pos.CENTER_RIGHT);

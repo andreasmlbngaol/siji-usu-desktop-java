@@ -2,8 +2,12 @@ package com.jawapbo.sijiusu.utils;
 
 public enum Endpoint {
     LOGIN("/auth/login"),
-    GET_ADMIN("/admins"),
-    CHANGE_PASSWORD("/auth/password")
+    GET_ADMIN_INFO("/admins"),
+    ADMIN_LECTURERS("/admins/users/lecturers"),
+    ADMIN_GET_STUDENTS("/admins/users/students"),
+    CHANGE_PASSWORD("/auth/password"),
+    ADMIN_GET_FACULTIES("/admins/academic/faculties"),
+    ADMIN_GET_FACULTY_BY_ID("/admins/academic/faculties/%d"),
 
     ;
 

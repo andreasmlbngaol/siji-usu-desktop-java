@@ -1,7 +1,7 @@
 package com.jawapbo.sijiusu.views;
 
 import com.jawapbo.sijiusu.api.ApiClient;
-import com.jawapbo.sijiusu.response.AdminDataResponse;
+import com.jawapbo.sijiusu.response.admin.AdminDataResponse;
 import com.jawapbo.sijiusu.utils.AppScene;
 import com.jawapbo.sijiusu.utils.Endpoint;
 import com.jawapbo.sijiusu.utils.Mapper;
@@ -21,7 +21,7 @@ public class AdminProfileController extends Controller {
     @FXML
     private void initialize() {
         var response = ApiClient.get(
-            Endpoint.GET_ADMIN.getPath()
+            Endpoint.GET_ADMIN_INFO.getPath()
         );
 
         try {

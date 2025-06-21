@@ -1,4 +1,4 @@
-package com.jawapbo.sijiusu.response;
+package com.jawapbo.sijiusu.response.admin;
 
 public record AdminDataResponse(
     Long id,

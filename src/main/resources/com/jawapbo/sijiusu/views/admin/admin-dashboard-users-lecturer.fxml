@@ -41,7 +41,7 @@
                   <Insets />
                </VBox.margin>
                <content>
-                  <VBox alignment="CENTER" spacing="16.0" style="-fx-background-color: #D6C0B3;">
+                  <VBox alignment="CENTER" prefWidth="1280.0" spacing="16.0" style="-fx-background-color: #D6C0B3;">
                      <children>
                         <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                            <children>
@@ -89,11 +89,14 @@
                               </VBox>
                            </children>
                            <VBox.margin>
-                              <Insets left="30.0" right="30.0" />
+                              <Insets />
                            </VBox.margin>
                         </VBox>
                         <VBox fx:id="itemsContainer" prefHeight="200.0" prefWidth="1280.0" spacing="16.0" />
                      </children>
+                     <padding>
+                        <Insets bottom="16.0" left="50.0" right="50.0" />
+                     </padding>
                   </VBox>
                </content>
             </ScrollPane>
