@@ -6,24 +6,25 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class AdminDashboardAcademicFacultyController extends Controller{
+public class AdminDashboardAcademicFacultyIdDepartmentController extends Controller{
 
     @FXML private Button profilButton;
     @FXML private Button keluarButton;
-    @FXML private Button newFakultasButton;
-    @FXML private Button namaFakultasButton;
-    @FXML private Button editFakultasButton;
+    @FXML private Button majorNameButton;
     @FXML private Button dashboardButton;
+    @FXML private Button newRoomButton;
+    @FXML private Button newMajorButton;
 
     @FXML
     private void initialize() {
         // Add hover effects to buttons
-        addHoverEffect(newFakultasButton);
-        addHoverEffect(namaFakultasButton);
         addHoverEffect(profilButton);
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
-        addHoverEffect(editFakultasButton);
+        addHoverEffect(majorNameButton);
+        addHoverEffect(newRoomButton);
+        addHoverEffect(newMajorButton);
+
     }
 
     @FXML
@@ -36,44 +37,29 @@ public class AdminDashboardAcademicFacultyController extends Controller{
     }
 
     @FXML
-    private void onBack(){
+    private void onBackDashboard() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
-    private void onNewFakultas(){
+    private void onNewMajor() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY_REGISTER);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY_ID_REGISTER);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
-    private void onNamaFakultas(){
+    private void onNameMajor() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY_ID_DEPARTMENT);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY_ID_DEPARTMENT_ROOM);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
-    @FXML
-    private void onEditFakultas(){
-        try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY_REGISTER_EDIT);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-
 }

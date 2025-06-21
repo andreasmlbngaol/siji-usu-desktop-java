@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicFacultyRegisterController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicFacultyIdRegisterController">
     <children>
         <VBox fillWidth="false" prefHeight="76.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -51,7 +51,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="25.0" prefWidth="332.0">
                <children>
-                  <Label text="Create new Faculty" textFill="WHITE">
+                  <Label text="Create new Major" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Bold" size="17.0" />
                      </font>
@@ -62,7 +62,7 @@
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="332.0">
                      <children>
-                        <Label text="Name" textFill="WHITE">
+                        <Label text="Nama" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="15.0" />
                            </font>
@@ -86,7 +86,7 @@
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="332.0">
                      <children>
-                        <Label text="Faculty code" textFill="WHITE">
+                        <Label text="NIDN" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="15.0" />
                            </font>

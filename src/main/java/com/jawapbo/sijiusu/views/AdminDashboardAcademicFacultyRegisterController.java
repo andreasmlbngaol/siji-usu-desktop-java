@@ -6,7 +6,8 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class AdminDashboardFacultyRegisterController extends Controller{
+public class AdminDashboardAcademicFacultyRegisterController extends  Controller{
+
 
     @FXML private Button profilButton;
     @FXML private Button keluarButton;
@@ -39,5 +40,4 @@ public class AdminDashboardFacultyRegisterController extends Controller{
             throw new RuntimeException(e);
         }
     }
-
 }
