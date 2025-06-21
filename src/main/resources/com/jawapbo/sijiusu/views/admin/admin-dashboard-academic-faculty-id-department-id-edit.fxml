@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerRegister">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerRegisterController">
     <children>
         <VBox fillWidth="false" prefHeight="76.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -31,7 +31,7 @@
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
                         </Button>
-                        <Button fx:id="keluarButton" mnemonicParsing="false" onAction="#onKeluar" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" mnemonicParsing="false" onAction="#onSignOut" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>

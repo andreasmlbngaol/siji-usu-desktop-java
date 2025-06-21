@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.List;
 
-public class AdminDashboardUserLecturerRegister extends Controller{
+public class AdminDashboardUserLecturerRegisterController extends Controller{
 
     @FXML private Button profilButton;
     @FXML private Button dashboardButton;
@@ -74,6 +74,7 @@ public class AdminDashboardUserLecturerRegister extends Controller{
                     ).departments();
 
                 Platform.runLater(() -> {
+                    departmentDropdown.getItems().clear();
                     departmentDropdown.getItems().addAll(departments);
                 });
 

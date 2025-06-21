@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerRegister">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerRegisterController">
     <children>
         <VBox fillWidth="false" prefHeight="76.0" prefWidth="1280.0" spacing="20.0">
             <children>
