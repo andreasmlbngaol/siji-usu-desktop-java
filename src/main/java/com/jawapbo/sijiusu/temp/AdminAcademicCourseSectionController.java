@@ -21,8 +21,7 @@ import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontColor;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;
 
 public class AdminAcademicCourseSectionController {
-    @FXML
-    private VBox itemsContainer;
+    @FXML private VBox itemsContainer;
 
     @FXML
     private void initialize() {
