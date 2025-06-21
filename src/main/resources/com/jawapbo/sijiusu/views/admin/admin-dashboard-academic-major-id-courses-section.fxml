@@ -41,7 +41,7 @@
                 <!-- Back Button + Section Title -->
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBackDashboard" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Back to Course">
+                        <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBack" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Back to Course">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>

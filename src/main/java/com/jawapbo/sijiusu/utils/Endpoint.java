@@ -12,9 +12,13 @@ public enum Endpoint {
     ADMIN_GET_COURSES_BY_MAJOR_ID("/admins/academic/majors/%d/courses"),
     ADMIN_GET_COURSE_BY_ID("/admins/academic/majors/courses/%d"),
     ADMIN_GET_CREATE_COURSE_WITH_MAJOR_ID("/admins/academic/majors/%d/courses"),
+    ADMIN_CREATE_SECTION_BY_COURSE_ID("/admins/academic/courses/%d/sections"),
 
     GET_STUDENT_INFO("/students"),
+    STUDENT_COURSES_SECTIONS("/students/courses/sections"),
+
     GET_LECTURER_INFO("/lecturers"),
+    LECTURER_COURSES_SECTIONS("/lecturers/courses/sections"),
     ;
 
     private final String path;

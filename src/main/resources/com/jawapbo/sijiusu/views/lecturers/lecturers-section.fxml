@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.lecturers.LecturerSectionController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.lecturers.LecturerSectionController">
     <children>
         <VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -31,7 +23,7 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="keluarButton" onAction="#onSignOut" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" mnemonicParsing="false" onAction="#onSignOut" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -45,7 +37,7 @@
                 <!-- Title Bar -->
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button fx:id="dashBoardButton" onAction="#onBackDashboard" mnemonicParsing="false" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard">
+                        <Button fx:id="dashBoardButton" mnemonicParsing="false" onAction="#onBackDashboard" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Kembali ke dashboard">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -63,118 +55,26 @@
                 </HBox>
 
                 <!-- Scrollable Content -->
-                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" vbarPolicy="AS_NEEDED">
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #D6C0B3;" vbarPolicy="AS_NEEDED">
                     <content>
                         <VBox prefWidth="1180.0" spacing="20.0" style="-fx-background-color: #D6C0B3;">
-                            <!-- Card Section -->
-                            <VBox fillWidth="false" prefHeight="266.0" prefWidth="1280.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-background-radius: 15; -fx-border-radius: 15;">
-                                <VBox.margin>
-                                    <Insets bottom="30.0" left="50.0" right="50.0" />
-                                </VBox.margin>
-                                <effect>
-                                    <DropShadow blurType="GAUSSIAN" />
-                                </effect>
-                                <children>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="1141.0">
-                                        <children>
-                                            <Label prefHeight="32.0" prefWidth="232.0" text="Nama mata kuliah" textFill="WHITE">
-                                                <font>
-                                                    <Font name="Segoe UI Bold" size="25.0" />
-                                                </font>
-                                                <padding>
-                                                    <Insets top="10.0" />
-                                                </padding>
-                                            </Label>
-                                        </children>
-                                        <padding>
-                                            <Insets left="20.0" />
-                                        </padding>
-                                    </HBox>
-
-                                    <HBox alignment="CENTER" prefHeight="201.0" prefWidth="667.0">
-                                        <children>
-                                            <GridPane prefHeight="201.0" prefWidth="689.0">
-                                                <columnConstraints>
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                </columnConstraints>
-                                                <rowConstraints>
-                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                </rowConstraints>
-                                                <children>
-                                                    <Label text="Bagian :" textAlignment="CENTER" textFill="WHITE">
-                                                        <font>
-                                                            <Font name="Segoe UI Bold" size="15.0" />
-                                                        </font>
-                                                        <padding>
-                                                            <Insets left="20.0" />
-                                                        </padding>
-                                                    </Label>
-                                                    <Label text="Ruang :" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
-                                                        <font>
-                                                            <Font name="Segoe UI Bold" size="15.0" />
-                                                        </font>
-                                                        <padding>
-                                                            <Insets left="20.0" />
-                                                        </padding>
-                                                    </Label>
-                                                    <Label text="Dosen :" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
-                                                        <font>
-                                                            <Font name="Segoe UI Bold" size="15.0" />
-                                                        </font>
-                                                        <padding>
-                                                            <Insets left="20.0" />
-                                                        </padding>
-                                                    </Label>
-                                                    <Label text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
-                                                        <font>
-                                                            <Font name="Segoe UI Bold" size="15.0" />
-                                                        </font>
-                                                        <padding>
-                                                            <Insets left="20.0" />
-                                                        </padding>
-                                                    </Label>
-                                                    <Label text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                        <font>
-                                                            <Font name="Segoe UI Bold" size="15.0" />
-                                                        </font>
-                                                        <padding>
-                                                            <Insets left="20.0" />
-                                                        </padding>
-                                                    </Label>
-                                                    <Label text="Label" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                        <font>
-                                                            <Font name="Segoe UI Bold" size="15.0" />
-                                                        </font>
-                                                        <padding>
-                                                            <Insets left="20.0" />
-                                                        </padding>
-                                                    </Label>
-                                                </children>
-                                            </GridPane>
-                                        </children>
-                                    </HBox>
-
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="1285.0">
-                                        <children>
-                                            <Button fx:id="daftarButton"  mnemonicParsing="false" prefHeight="29.0" prefWidth="148.0" style="-fx-background-color: #32cf3f; -fx-border-radius: 10; -fx-background-radius: 10;" text="Enroll Class" textFill="WHITE">
-                                                <font>
-                                                    <Font name="Segoe UI Bold" size="16.0" />
-                                                </font>
-                                                <HBox.margin>
-                                                    <Insets bottom="20.0" right="20.0" />
-                                                </HBox.margin>
-                                            </Button>
-                                        </children>
-                                    </HBox>
-                                </children>
-                            </VBox>
+                     <children>
+                        <VBox fx:id="itemsContainer" prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
 
                             <!-- Kamu bisa duplikasi VBox di atas jika ingin menampilkan lebih banyak card -->
                         </VBox>
                     </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
                 </ScrollPane>
             </children>
         </VBox>

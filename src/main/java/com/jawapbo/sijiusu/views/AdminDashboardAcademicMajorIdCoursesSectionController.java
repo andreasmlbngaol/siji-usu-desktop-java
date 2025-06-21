@@ -15,7 +15,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-import static com.jawapbo.sijiusu.utils.JavaFxExt.*;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFont;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontColor;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;
@@ -131,9 +130,9 @@ public class AdminDashboardAcademicMajorIdCoursesSectionController extends Contr
     }
 
     @FXML
-    private void onBackDashboard() {
+    private void onBack() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSES);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

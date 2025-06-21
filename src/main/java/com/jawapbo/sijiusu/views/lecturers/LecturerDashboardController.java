@@ -3,7 +3,6 @@ package com.jawapbo.sijiusu.views.lecturers;
 import com.jawapbo.sijiusu.api.ApiClient;
 import com.jawapbo.sijiusu.response.lecturer.LecturerResponse;
 import com.jawapbo.sijiusu.response.student.CoursesTakenResponse;
-import com.jawapbo.sijiusu.response.student.StudentResponse;
 import com.jawapbo.sijiusu.utils.AppScene;
 import com.jawapbo.sijiusu.utils.Endpoint;
 import com.jawapbo.sijiusu.utils.Mapper;
@@ -19,7 +18,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-import static com.jawapbo.sijiusu.utils.JavaFxExt.*;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFont;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontColor;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;

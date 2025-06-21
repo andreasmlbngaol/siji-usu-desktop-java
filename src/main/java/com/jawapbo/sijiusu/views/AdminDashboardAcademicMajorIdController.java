@@ -103,7 +103,7 @@ public class AdminDashboardAcademicMajorIdController extends Controller{
     }
 
     @FXML
-    private void onBackDashboard() {
+    private void onBackCourses() {
         try {
             switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR);
         } catch (IOException e) {

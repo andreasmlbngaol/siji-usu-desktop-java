@@ -8,6 +8,7 @@ import com.jawapbo.sijiusu.views.Controller;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -21,9 +22,12 @@ import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;
 public class StudentDashboardController extends Controller {
     @FXML
     private VBox itemsContainer;
+    @FXML private VBox addButton;
 
     @FXML
     private void initialize() {
+        addHoverEffect(addButton);
+
         var response = ApiClient.get(
             Endpoint.GET_STUDENT_INFO.getPath()
         );
