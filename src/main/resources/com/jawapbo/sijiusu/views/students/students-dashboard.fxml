@@ -35,7 +35,7 @@
                <content>
                   <VBox prefWidth="1280.0" spacing="16.0" style="-fx-background-color: #D6C0B3;">
                      <children>
-                            <VBox alignment="CENTER" prefHeight="179.0" prefWidth="1180.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
+                            <VBox alignment="CENTER" onMouseClicked="#onSwitchToEnroll" prefHeight="179.0" prefWidth="1180.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
                                 <effect>
                                     <DropShadow blurType="GAUSSIAN" />
                                 </effect>

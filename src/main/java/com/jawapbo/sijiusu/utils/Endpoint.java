@@ -14,6 +14,7 @@ public enum Endpoint {
     ADMIN_GET_CREATE_COURSE_WITH_MAJOR_ID("/admins/academic/majors/%d/courses"),
 
     GET_STUDENT_INFO("/students"),
+    GET_LECTURER_INFO("/lecturers"),
     ;
 
     private final String path;

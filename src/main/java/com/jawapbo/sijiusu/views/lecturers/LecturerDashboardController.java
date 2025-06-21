@@ -1,37 +1,43 @@
-package com.jawapbo.sijiusu.views.students;
+package com.jawapbo.sijiusu.views.lecturers;
 
 import com.jawapbo.sijiusu.api.ApiClient;
+import com.jawapbo.sijiusu.response.lecturer.LecturerResponse;
 import com.jawapbo.sijiusu.response.student.CoursesTakenResponse;
 import com.jawapbo.sijiusu.response.student.StudentResponse;
-import com.jawapbo.sijiusu.utils.*;
+import com.jawapbo.sijiusu.utils.Endpoint;
+import com.jawapbo.sijiusu.utils.Mapper;
+import com.jawapbo.sijiusu.utils.StyledAlert;
 import com.jawapbo.sijiusu.views.Controller;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
-import java.io.IOException;
-
+import static com.jawapbo.sijiusu.utils.JavaFxExt.*;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFont;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontColor;
 import static com.jawapbo.sijiusu.utils.JavaFxExt.setFontWeight;
 
-public class StudentDashboardController extends Controller {
+public class LecturerDashboardController extends Controller {
     @FXML
     private VBox itemsContainer;
-
     @FXML
-    private void initialize() {
+    private Button signOutButton;
+
+    @FXML private void initialize() {
+        addHoverEffect(signOutButton);
+
         var response = ApiClient.get(
-            Endpoint.GET_STUDENT_INFO.getPath()
+            Endpoint.GET_LECTURER_INFO.getPath()
         );
 
         if (response.statusCode() >= 200 && response.statusCode() < 300) {
             try {
-                var student = Mapper.getInstance().readValue(response.body(), StudentResponse.class);
-                var courses = student.coursesTaken();
+                var lecturer = Mapper.getInstance().readValue(response.body(), LecturerResponse.class);
+                var courses = lecturer.coursesTaught();
 
                 courses
                     .stream()
@@ -110,12 +116,4 @@ public class StudentDashboardController extends Controller {
         return card;
     }
 
-    @FXML
-    private void onSwitchToEnroll() {
-        try {
-            switchScene(AppScene.STUDENT_COURSE_SECTION);
-        } catch (IOException e) {
-            StyledAlert.show("Error", "Failed to switch to enroll view: " + e.getMessage());
-        }
-    }
 }
