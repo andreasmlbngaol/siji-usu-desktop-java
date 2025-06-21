@@ -98,7 +98,7 @@
                                 <Insets left="20.0" />
                             </padding>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="201.0" prefWidth="667.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="201.0" prefWidth="667.0">
                      <children>
                         <Button mnemonicParsing="false" prefHeight="77.0" prefWidth="290.0" style="-fx-background-color: tr;" text="Nama Course" textFill="WHITE">
                            <font>
