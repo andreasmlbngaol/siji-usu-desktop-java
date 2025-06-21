@@ -106,17 +106,6 @@
                            </font></Button>
                      </children>
                         </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="1285.0">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to right, #d97706, #fbbf24);" text="EDIT" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Bold" size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="15.0" right="15.0" />
-                     </VBox.margin></HBox>
                     </children>
                 </VBox>
             </children>
