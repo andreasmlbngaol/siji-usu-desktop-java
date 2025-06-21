@@ -11,6 +11,7 @@ public class AdminDashboardAcademicMajorIdCoursesSectionController extends Contr
     @FXML private Button profilButton;
     @FXML private Button keluarButton;
     @FXML private Button dashboardButton;
+    @FXML private Button createButton;
 
     @FXML
     private void initialize() {
@@ -18,6 +19,7 @@ public class AdminDashboardAcademicMajorIdCoursesSectionController extends Contr
         addHoverEffect(profilButton);
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
+        addHoverEffect(createButton);
 
     }
 
@@ -38,4 +40,7 @@ public class AdminDashboardAcademicMajorIdCoursesSectionController extends Contr
             throw new RuntimeException(e);
         }
     }
+
+
+
 }
