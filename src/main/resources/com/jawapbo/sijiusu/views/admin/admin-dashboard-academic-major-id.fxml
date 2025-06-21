@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicFacultyIdDepartmentRoomController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicMajorIdController">
     <children>
         <VBox fillWidth="false" prefHeight="720.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -26,12 +26,12 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onSwitchToProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onSwitchToProfile" style="-fx-background-color: transparent;" text="Profile" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
                         </Button>
-                        <Button fx:id="keluarButton" mnemonicParsing="false" onAction="#onSignOut" style="-fx-background-color: transparent;" text="Keluar" textFill="#d6c0b3">
+                        <Button fx:id="keluarButton" mnemonicParsing="false" onAction="#onSignOut" style="-fx-background-color: transparent;" text="Logout" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -41,16 +41,17 @@
                         <DropShadow />
                     </effect>
                 </HBox>
+
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBackDashboard" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Back to Dashboard">
+                        <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBackDashboard" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Back to Course">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
                         </Button>
                         <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1034.0">
                             <children>
-                                <Label text="Department List">
+                                <Label text="Dashboard Course">
                                     <font>
                                         <Font name="Segoe UI Bold" size="25.0" />
                                     </font>
@@ -60,7 +61,7 @@
                     </children>
                 </HBox>
 
-                <!-- SCROLLPANE START -->
+                <!-- ScrollPane start -->
                 <ScrollPane hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
                     <VBox.margin>
                         <Insets />
@@ -68,7 +69,41 @@
                     <content>
                         <VBox spacing="20.0" style="-fx-background-color: #D6C0B3;">
                             <children>
-                                <VBox fillWidth="false" prefHeight="137.0" prefWidth="1180.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-background-radius: 15; -fx-border-radius: 15;">
+                                <!-- Create Course Card -->
+                                <VBox fillWidth="false" prefHeight="183.0" prefWidth="1180.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-border-radius: 12; -fx-background-radius: 12;">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" />
+                                    </effect>
+                                    <VBox.margin>
+                                        <Insets left="50.0" right="50.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="1178.0">
+                                            <children>
+                                                <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAdd" prefHeight="119.0" prefWidth="1178.0" style="-fx-background-color: transparent;" text="Create new Course" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Segoe UI Bold" size="30.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="67.0" prefWidth="1178.0">
+                                            <children>
+                                                <Label alignment="CENTER" prefHeight="60.0" prefWidth="252.0" text="Add new Course" textAlignment="CENTER" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Segoe UI Bold" size="15.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Course Item Card -->
+                                <VBox fillWidth="false" prefHeight="65.0" prefWidth="1180.0" style="-fx-background-color: #493628; -fx-border-color: #493628; -fx-background-radius: 15; -fx-border-radius: 15;">
                                     <VBox.margin>
                                         <Insets bottom="30.0" left="50.0" right="50.0" />
                                     </VBox.margin>
@@ -76,37 +111,26 @@
                                         <DropShadow blurType="GAUSSIAN" />
                                     </effect>
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1141.0">
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="1141.0">
+                                            <padding>
+                                                <Insets left="20.0" />
+                                            </padding>
                                             <children>
-                                                <Label prefHeight="115.0" prefWidth="1121.0" text="RUANGAN KELAS" textFill="WHITE">
+                                                <Button fx:id="courseButton" onAction="#onCourse" mnemonicParsing="false" prefHeight="53.0" prefWidth="268.0" style="-fx-background-color: transparent;" text="Course Name" textFill="WHITE">
                                                     <font>
                                                         <Font name="Segoe UI Bold" size="25.0" />
                                                     </font>
-                                                </Label>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets left="15.0" top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <HBox alignment="CENTER_RIGHT" prefHeight="125.0" prefWidth="1148.0">
-                                            <children>
-                                                <Button fx:id="editButton" onAction="#onEdit" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: linear-gradient(to right, #d97706, #fbbf24);" text="EDIT" textFill="WHITE">
-                                                    <font>
-                                                        <Font name="Segoe UI Bold" size="15.0" />
-                                                    </font>
                                                 </Button>
                                             </children>
-                                            <VBox.margin>
-                                                <Insets bottom="5.0" right="30.0" />
-                                            </VBox.margin>
                                         </HBox>
                                     </children>
                                 </VBox>
+
                             </children>
                         </VBox>
                     </content>
                 </ScrollPane>
-                <!-- SCROLLPANE END -->
+                <!-- ScrollPane end -->
 
             </children>
         </VBox>

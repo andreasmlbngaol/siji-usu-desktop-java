@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerRegister">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicMajorIdCoursesCreateController">
     <children>
         <VBox fillWidth="false" prefHeight="76.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -21,7 +21,7 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onSwitchToProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -85,13 +85,13 @@
                             <children>
                                 <HBox prefHeight="46.0" prefWidth="183.0">
                                     <children>
-                                        <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #dc2626, #ef4444);" text="X Cancel" textFill="WHITE">
+                                        <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #dc2626, #ef4444);" text="X Cancel" textFill="WHITE">
                                             <font>
                                                 <Font name="Segoe UI Bold" size="15.0" />
                                             </font>
                                         </Button>
                                         <VBox prefHeight="200.0" prefWidth="100.0" />
-                                        <Button fx:id="registerButton1" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #d97706, #fbbf24);;" text="Save" textFill="WHITE">
+                                        <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #d97706, #fbbf24);;" text="Save" textFill="WHITE">
                                             <font>
                                                 <Font name="Segoe UI Bold" size="15.0" />
                                             </font>
@@ -106,7 +106,7 @@
         </VBox>
         <VBox alignment="CENTER" layoutX="29.0" layoutY="99.0" prefHeight="67.0" prefWidth="238.0">
             <children>
-                <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBack" prefHeight="29.0" prefWidth="289.0" style="-fx-background-color: transparent;" text="← Kembali ke Major">
+                <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBackDashboard" prefHeight="29.0" prefWidth="289.0" style="-fx-background-color: transparent;" text="← Kembali ke Major">
                     <font>
                         <Font name="Segoe UI Bold" size="15.0" />
                     </font>

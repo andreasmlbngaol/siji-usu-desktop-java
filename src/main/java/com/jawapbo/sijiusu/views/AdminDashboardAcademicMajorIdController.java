@@ -6,12 +6,14 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class AdminDashboardAcademicFacultyEditController extends Controller{
+public class AdminDashboardAcademicMajorIdController extends Controller{
 
     @FXML private Button profilButton;
     @FXML private Button keluarButton;
-    @FXML private Button registerButton;
     @FXML private Button dashboardButton;
+    @FXML private Button addButton;
+    @FXML private Button courseButton;
+
 
     @FXML
     private void initialize() {
@@ -19,7 +21,9 @@ public class AdminDashboardAcademicFacultyEditController extends Controller{
         addHoverEffect(profilButton);
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
-        addHoverEffect(registerButton);
+        addHoverEffect(addButton);
+        addHoverEffect(courseButton);
+
     }
 
     @FXML
@@ -34,7 +38,25 @@ public class AdminDashboardAcademicFacultyEditController extends Controller{
     @FXML
     private void onBackDashboard() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    private void onAdd() {
+        try {
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_CREATE);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    private void onCourse() {
+        try {
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID_COURSE_SECTION);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

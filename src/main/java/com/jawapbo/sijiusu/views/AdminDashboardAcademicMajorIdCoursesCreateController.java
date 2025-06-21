@@ -6,13 +6,13 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class AdminDashboardAcademicFacultyRegisterController extends  Controller{
-
+public class AdminDashboardAcademicMajorIdCoursesCreateController extends Controller {
 
     @FXML private Button profilButton;
     @FXML private Button keluarButton;
-    @FXML private Button registerButton;
     @FXML private Button dashboardButton;
+    @FXML private Button registerButton;
+    @FXML private Button cancelButton;
 
     @FXML
     private void initialize() {
@@ -20,6 +20,7 @@ public class AdminDashboardAcademicFacultyRegisterController extends  Controller
         addHoverEffect(profilButton);
         addHoverEffect(keluarButton);
         addHoverEffect(dashboardButton);
+        addHoverEffect(cancelButton);
         addHoverEffect(registerButton);
     }
 
@@ -35,9 +36,11 @@ public class AdminDashboardAcademicFacultyRegisterController extends  Controller
     @FXML
     private void onBackDashboard() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_FACULTY);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR_ID);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+
 }

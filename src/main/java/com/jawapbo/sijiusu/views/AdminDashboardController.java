@@ -44,7 +44,7 @@ public class AdminDashboardController extends Controller {
     @FXML
     private void onManajemenAkademik() {
         try {
-            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC);
+            switchScene(AppScene.ADMIN_DASHBOARD_ACADEMIC_MAJOR);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

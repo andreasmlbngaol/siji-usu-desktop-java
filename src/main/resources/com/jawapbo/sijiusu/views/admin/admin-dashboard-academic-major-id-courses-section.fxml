@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardUserLecturerController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D6C0B3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jawapbo.sijiusu.views.AdminDashboardAcademicMajorIdCoursesSectionController">
     <children>
         <VBox fillWidth="false" prefHeight="720.0" prefWidth="1280.0" spacing="20.0">
             <children>
@@ -21,7 +21,7 @@
                             </font>
                         </Label>
                         <Region prefHeight="51.0" prefWidth="911.0" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
+                        <Button fx:id="profilButton" mnemonicParsing="false" onAction="#onSwitchToProfile" style="-fx-background-color: tranparent;" text="Profil" textFill="#d6c0b3">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
@@ -38,7 +38,7 @@
                 </HBox>
                 <HBox fillHeight="false" prefHeight="65.0" prefWidth="1282.0">
                     <children>
-                        <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBack" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Back to Course">
+                        <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#onBackDashboard" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: transparent;" text="← Back to Course">
                             <font>
                                 <Font name="Segoe UI Bold" size="15.0" />
                             </font>
